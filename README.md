@@ -12,7 +12,7 @@ Base structure for creating plugins for WordPress
 
 This project aims to provide the basic framework for creating a WordPress plugin.
 
-# Structure file #
+** Structure file **
 
 .
 +-- assets
@@ -21,9 +21,9 @@ This project aims to provide the basic framework for creating a WordPress plugin
 |   +-- images
 |   +-- js
     |    +-- main.js
-+-- languages
-+-- editorconfig
-+-- gitignore
+    +-- languages
+    +-- editorconfig
+    +-- gitignore
 +-- baianada.php
 +-- index.php
 +-- README.md
