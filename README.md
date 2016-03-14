@@ -12,20 +12,31 @@ Base structure for creating plugins for WordPress
 
 This project aims to provide the basic framework for creating a WordPress plugin.
 
-** Structure file **
+**Structure file**
 
 .
 +-- assets
+
 |   +-- css
+
     |    +-- main.css
+
 |   +-- images
+
 |   +-- js
+
     |    +-- main.js
+
     +-- languages
+
     +-- editorconfig
+
     +-- gitignore
+
 +-- baianada.php
+
 +-- index.php
+
 +-- README.md
 
 The assets directory, as its name implies, should be used to hold the assets of the plugin. It has sub directories to better organize your files by type, they are: css, images and js. The JS file already behind a framework based on jQuery, ready to start writing your functions and a variable with the url of the `admin-ajax`.
