@@ -14,6 +14,8 @@
 	if ( ! defined( 'ABSPATH' ) )
 		exit; // Exit if accessed directly.
 
+	// require_once 'autoloader.php';
+
 	/**
 	 * Baianada
 	 *
@@ -96,5 +98,4 @@
 		}
 
 	} // end class Baianada();
-
 	add_action( 'plugins_loaded', array( 'Baianada', 'get_instance' ), 0 );

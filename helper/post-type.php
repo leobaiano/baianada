@@ -4,6 +4,7 @@
 	 *
 	 * @author   Leo Baiano <ljunior2005@gmail.com>
 	 */
+
 	class LB_Post_Type {
 
 		/**
