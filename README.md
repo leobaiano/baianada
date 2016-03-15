@@ -1,10 +1,4 @@
 # Baianada #
-Contributors: leobaiano
-Donate link: http://leobaiano.com.br/donate
-Tags: plugin WordPress, plugin, WordPress, Starter Plugin, Kick Starter Plugin
-Stable tag: 1.0.0
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Base structure for creating plugins for WordPress
 
@@ -17,6 +11,8 @@ The assets directory, as its name implies, should be used to hold the assets of 
 The help directory back some classes stores classes and libraries to help create the plugin.
 
 The main file, `baianada.php` behind a class for the plugin. In `__construct()` class has two actions calling methods to set the load text domain and the enqueue scripts to load the css and js plugin. Also behind the static method `get_instance()` is called out of class, with the action `plugins_loaded` that is called when loading plugins.
+
+[I'm working on a script that will automate the customization of this base, changing the names and texts domain to avoid conflicts. The [Baianada Shell](https://github.com/leobaiano/baianada-shell) repository is also available and you can contribute if you want to help.
 
 ## Helper classes ##
 
