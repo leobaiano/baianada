@@ -14,7 +14,7 @@ This project aims to provide the basic framework for creating a WordPress plugin
 
 The assets directory, as its name implies, should be used to hold the assets of the plugin. It has sub directories to better organize your files by type, they are: css, images and js. The JS file already behind a framework based on jQuery, ready to start writing your functions and a variable with the url of the `admin-ajax`.
 
-The main file, `baianada.php` behind a class for the plugin. In `__construct ()` class has two actions calling methods to set the load text domain and the enqueue scripts to load the css and js plugin. Also behind the static method `get_instance ()` is called out of class, with the action `plugins_loaded` that is called when loading plugins.
+The main file, `baianada.php` behind a class for the plugin. In `__construct()` class has two actions calling methods to set the load text domain and the enqueue scripts to load the css and js plugin. Also behind the static method `get_instance()` is called out of class, with the action `plugins_loaded` that is called when loading plugins.
 
 ## Contribute ##
 

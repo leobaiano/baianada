@@ -81,6 +81,6 @@
 			wp_localize_script( self::$text_domain . '_js_main', 'data_brodinhos', $params );
 		}
 
-	} // end class Brodinhos();
+	} // end class Baianada();
 
 	add_action( 'plugins_loaded', array( 'Baianada', 'get_instance' ), 0 );
