@@ -14,7 +14,42 @@ This project aims to provide the basic framework for creating a WordPress plugin
 
 The assets directory, as its name implies, should be used to hold the assets of the plugin. It has sub directories to better organize your files by type, they are: css, images and js. The JS file already behind a framework based on jQuery, ready to start writing your functions and a variable with the url of the `admin-ajax`.
 
+The help directory back some classes stores classes and libraries to help create the plugin.
+
 The main file, `baianada.php` behind a class for the plugin. In `__construct()` class has two actions calling methods to set the load text domain and the enqueue scripts to load the css and js plugin. Also behind the static method `get_instance()` is called out of class, with the action `plugins_loaded` that is called when loading plugins.
+
+## Helper classes ##
+
+### Post Type ###
+
+The `LB_Post_Type()` class facilitates the creation of custom posts types which is a widely used resource in the development of plugins. The `Baianada()` class already boasts a method that loads all the classes available in helper, so you just need to create a new method to create the kinds custom posts of your plugin and load it with an action init in `__construct()` class.
+
+Properties `LB_Post_Type()`
+
+```
+@param string $ slug - Slug CPT
+@param string $ name - CPT name
+@param array $ supports - Supports
+#param string $ domain - Domain Text plugin
+```
+
+Example of creating CPT
+
+```
+//----- Outher Code ----
+/**
+ * Initialize the plugin
+ */
+private function __construct() {
+	add_action( 'init', array( $this, 'cc_teste' ) );
+}
+
+//----- Outher Code ----
+
+public function cc_teste() {
+	new LB_Post_Type( 'schedule', 'Schedule', array( 'title', 'thumbnail' ), self::$text_domain );
+}
+```
 
 ## Contribute ##
 

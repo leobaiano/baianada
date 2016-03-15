@@ -43,6 +43,9 @@
 
 			// Load styles and script
 			add_action( 'wp_enqueue_scripts', array( $this, 'load_admin_styles_and_scripts' ) );
+
+			// Load Helpers
+			add_action( 'init', array( $this, 'load_helper' ) );
 		}
 
 		/**
@@ -79,6 +82,17 @@
 					);
 			wp_enqueue_script( self::$text_domain . '_js_main', plugins_url( '/assets/js/main.js', __FILE__ ), array( 'jquery' ), null, true );
 			wp_localize_script( self::$text_domain . '_js_main', 'data_brodinhos', $params );
+		}
+
+		/**
+		 * Load auxiliary and third classes are in the class directory
+		 *
+		 */
+		public function load_helper() {
+			$class_dir = plugin_dir_path( __FILE__ ) . "/helper/";
+			foreach ( glob( $class_dir . "*.php" ) as $filename ){
+				include $filename;
+			}
 		}
 
 	} // end class Baianada();
