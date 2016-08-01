@@ -5,7 +5,7 @@
 	 * @author   Leo Baiano <ljunior2005@gmail.com>
 	 */
 
-	class LB_Post_Type {
+	class LB_Post_Type_Ortopedia {
 
 		/**
 		 * Slug.
