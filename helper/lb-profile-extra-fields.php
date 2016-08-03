@@ -18,7 +18,7 @@
 	 *
 	 * @author   Leo Baiano <leobaiano@lbideias.com.br>
 	 */
-	class Lb_Profile_Extra_Fields_Ortopedia {
+	class Lb_Profile_Extra_Fields {
 
 		/**
 		 * Pluglin Slug
