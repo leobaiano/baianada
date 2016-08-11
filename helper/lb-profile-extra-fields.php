@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) )
  *
  * @author   Leo Baiano <leobaiano@lbideias.com.br>
  */
-class Lb_Profile_Extra_Fields {
+class Lb_Profile_Extra_Fields_Splinter {
 
 	/**
 	 * Pluglin Slug
