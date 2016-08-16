@@ -1,47 +1,57 @@
-=== Splinter ===
+=== Baianada ===
 
 Contributors: leobaiano
 Donate link: http://lbideias.com.br/donate
-Tags: courses, lessons, schools, create course, create schools, manage schools, manage courses
+Tags: plugins WordPress, WordPress, plugin, plugin base, framework
 Requires at least: 3.8
 Tested up to: 4.5.3
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Splinter is a WordPress plugin that adds a complete system to your site management courses.
+Base structure for creating plugins for WordPress
 
 == Description ==
 
-You want to create an online course to teach people how to play guitar? He owns a cram school of languages and want to open online lessons? Manages a school and want to build a digital environment for your students? Whatever... If you want to teach online Splinter is the tool you are looking for.
+This project aims to provide the basic framework for creating a WordPress plugin.
 
-This plugin will allow you register courses, create modules for it, you associate lessons to modules, writing exercises for each class and create a test for each module.
+The assets directory, as its name implies, should be used to hold the assets of the plugin. It has sub directories to better organize your files by type, they are: css, images and js. The JS file already behind a framework based on jQuery, ready to start writing your functions and a variable with the url of the `admin-ajax`.
 
-**Student**
+The help directory back some classes stores classes and libraries to help create the plugin.
 
-Your site visitors will be able to enroll in and attend lessons according to how you set. You can set that the student will have a maximum time limit to complete each module or can leave it free to attend lessons and complete the module at the time you want.
+The main file, `baianada.php` behind a class for the plugin. In `__construct()` class has two actions calling methods to set the load text domain and the enqueue scripts to load the css and js plugin. Also behind the static method `get_instance()` is called out of class, with the action `plugins_loaded` that is called when loading plugins.
 
-The environment of the student was developed thinking in an easy and intuitive navigation so that it does not need to worry about learning to use the system, all he needs to do is to concentrate in class!
+[I'm working on a script that will automate the customization of this base, changing the names and texts domain to avoid conflicts. The [Baianada Shell](https://github.com/leobaiano/baianada-shell) repository is also available and you can contribute if you want to help.
 
-**Reports**
+== Helper classes ==
 
-In the administrative panel you will have access to financial data, administrative and monitoring of students, teachers also have access to performance reports and may submit tips and suggestions for students to focus more where they have difficulties.
+=== Post Type ===
 
-== Installation ==
+The `LB_Post_Type()` class facilitates the creation of custom posts types which is a widely used resource in the development of plugins. The `Baianada()` class already boasts a method that loads all the classes available in helper, so you just need to create a new method to create the kinds custom posts of your plugin and load it with an action init in `__construct()` class.
 
-To install just follow the installation steps of most WordPress plugin's:
+Properties `LB_Post_Type()`
 
-e.g.
+`
+@param string $ slug - Slug CPT
+@param string $ name - CPT name
+@param array $ supports - Supports
+#param string $ domain - Domain Text plugin
+`
 
-1. Download the file lb-back-to-top.zip;
-2. Unzip the file on your computer;
-3. Upload folder post-ranking-view, you just unzip to `/wp-content/plugins/` directory;
-4. Activate the plugin through the `Plugins` menu in WordPress;
-5. Be happy.
+Example of creating CPT
 
-== Changelog ==
+`
+//----- Outher Code ----
+/**
+ * Initialize the plugin
+ */
+private function __construct() {
+	add_action( 'init', array( $this, 'cc_teste' ) );
+}
 
-= 1.0.0 2016-08-11 =
+//----- Outher Code ----
 
-* Creation of the plugin, the initial version.
-
+public function cc_teste() {
+	new LB_Post_Type( 'schedule', 'Schedule', array( 'title', 'thumbnail' ), self::$text_domain );
+}
+`
